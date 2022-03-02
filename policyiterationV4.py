@@ -745,7 +745,7 @@ print("Will load Julia and Julia code now....wait")
 import julia
 jl = julia.Julia(compiled_modules=False)
 from julia import Main
-x = Main.include("juliacode.jl")
+x = Main.include("juliacodeV4.jl")
 Main.V=V
 Main.A=A
 Main.DESTC=DESTC
@@ -766,17 +766,6 @@ SOL_FSTAGE_REW2E=SOL_FSTAGE_REW2H
 #SOL_FSTAGE_REW2E,SOLVALUE_REW2E =run_DRL(DESTC,CAPV,REWV,'DRL_REW2E',NUMBERNODES,scenario,epsilon,learning_rate,MAXITER,LAST_SCENARIO_TO_TRAIN)
 TIME_DRL_REW2E= time()-start_time
 
-#Run  DRO Algorithm
-start_time = time()
-print("Running with DRO baseline if instance size <= 18")
-#if len(DESTC) <= 18:
-  #Main.inst_idf = inst_id
-  #SOL_FSTAGE_DRO,SOLVALUE_DRO = jl.eval("dro(V,A,DESTC,PROBC,PRICEOD,REWV,CAPV,PROBOD,REWOD)")
-  #print("DRO ",SOL_FSTAGE_DRO,", ",SOLVALUE_DRO)
-  #input()
-SOL_FSTAGE_DRO=SOL_FSTAGE_REW1
-SOLVALUE_DRO = 0
-TIME_DRO= time()-start_time
 
  
 #Initiate simulation comparing best V value function with reoptimization
@@ -848,31 +837,6 @@ print("Simulating Value Funtion  with random solution REWARD VARIANT 1", RESULT_
 #print("Simulating Value Funtion  with Second random solution REWARD VARIANT 1", episodetotalreturn)
 ##input()
 
-
-#print("Simulating Value Funtion with DRO")
-#bestZ = SOL_FSTAGE_DRO
-#print(bestZ)
-
-#bestZ = [int(round(x)) for x in bestZ]
-
-#firststage = [0 for _ in range(len(DESTC))]
-#for i in range(len(DESTC)):
-#  firststage[bestZ[i]-1]= DESTC[i]
-
-#episode =FIRST_SCENARIO_TO_SIMULATE
-#RESULT_SIMU_DRO = 0
-#while episode < LAST_SCENARIO_TO_SIMULATE: 
-#  #print(episode," ")
-#  for _ in range(4):
-#    if episode%100==0:
-#      print(episode," ,")
-#    #calculate reward 1 for this scenario
-#    RESULT_SIMU_DRO+=calculate_reward1(A,DURV,REWV,CAPV,DESTC,firststage,episode)
-#    episode+=1
-  
-
-#print("Simulating Value Funtion  with DRO", RESULT_SIMU_DRO)
-##input()
 
 
 #print("Simulation using result from best Value Function with REWARD VARIANT 2 EXACT")
