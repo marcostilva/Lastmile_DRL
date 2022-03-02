@@ -22,4 +22,4 @@ is continuous. We present a different approach where we formulate the action sel
 a mixed-integer optimization program. We combine the combinatorial structure of the action space with the neural architecture of 
 the learned value function, involving techniques from machine learning and integer optimization.
 
-Here we present the base code use dto run DRL algorithms.
+Here we present the base code used to run DRL algorithms.
