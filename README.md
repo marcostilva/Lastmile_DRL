@@ -20,14 +20,6 @@ challenge associated with the design of the DRL approach concerns the action spa
 its combinatorial nature. Reinforcement learning algorithms typically require an action space that is small enough to enumerate or 
 is continuous. We present a different approach where we formulate the action selection problem  as 
 a mixed-integer optimization program. We combine the combinatorial structure of the action space with the neural architecture of 
-the learned value 
-function, involving techniques from machine learning and integer optimization.
+the learned value function, involving techniques from machine learning and integer optimization.
 
-The DRL approach is compared against other approaches 
-to optimization under
-uncertainty, namely, sample-average approximation and distributionally robust 
-optimization. The results show  the effectiveness of the DRL approach by examining 
-out-of-sample performance and that it is suitable to  process large samples of uncertain 
-data, which induces better solutions. On the other hand, the DRO 
-approach is suitable to  mitigate  errors incurred when estimating a 
-probability distribution from limited data.
+Here we present the base code use dto run DRL algorithms.
